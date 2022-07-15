@@ -1,5 +1,5 @@
 function Fibonacci(n: number) {
-    let number1 = 0, number2= 1,total = 0, sum = 0;
+    let number1 = 0, number2 = 1, total = 0, sum = 0;
 
     console.log(number1);
     for (let i = 1; i < n; i++) {
