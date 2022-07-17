@@ -108,180 +108,71 @@
         </div>
     </div>
 </div>
-<table class="table table-striped">
-    <thead class="thead-dark">
-    <tr>
-        <th style="text-align: center" scope="col">ID</th>
-        <th style="text-align: center" scope="col">Full name</th>
-        <th style="text-align: center" scope="col">Birth day</th>
-        <th style="text-align: center" scope="col">Gender</th>
-        <th style="text-align: center" scope="col">Id card</th>
-        <th style="text-align: center" scope="col">Phone</th>
-        <th style="text-align: center" scope="col">Email</th>
-        <th style="text-align: center" scope="col">Address</th>
-        <th style="text-align: center" scope="col">Type customer</th>
-        <th style="text-align: center" scope="col">Edit</th>
-        <th style="text-align: center" scope="col">Delete</th>
-    </tr>
-    </thead>
-    <tbody id="customerList">
-    </tbody>
-</table>
-<div class="container my-5">
-    <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-    </ul>
-</div>
-<script>
-    var customer = [
-        {
-            iD: 1,
-            fullName: "Trần Mạnh Cường",
-            birthDay: "1997-28-01",
-            gender: "Nam",
-            idCard: "3434545452",
-            phone: "0332920629",
-            email: "cuong@gmail.com",
-            address: "Quảng Bình",
-            typeCustomer: "Diamond"
-        },
-        {
-            iD: 2,
-            fullName: "Trần Thị Tuyết",
-            birthDay: "2000-02-10",
-            gender: "Nữ",
-            idCard: "4322323232",
-            phone: "0989898988",
-            email: "tuyet@gmail.com",
-            address: "Quảng Nam",
-            typeCustomer: "God"
-        },
-        {
-            iD: 3,
-            fullName: "Nguyễn Hà Phương",
-            birthDay: "1996-09-05",
-            gender: "Nam",
-            idCard: "74434344534",
-            phone: "0978797666",
-            email: "phuong@gmail.com",
-            address: "Hà Nội",
-            typeCustomer: "Platinium"
-        },
-        {
-            iD: 4,
-            fullName: "Mai Thế Hùng",
-            birthDay: "1997-03-30",
-            gender: "Nam",
-            idCard: "3232321212",
-            phone: "0989888877",
-            email: "hung@gmail.com",
-            address: "Thanh Hoá",
-            typeCustomer: "Silver"
-        },
-        {
-            iD: 5,
-            fullName: "Nguyễn Thanh Hải",
-            birthDay: "1997-11-10",
-            gender: "Nam",
-            idCard: "23232432323",
-            phone: "0998898367",
-            email: "hai@gmail.com",
-            address: "Hà Tĩnh",
-            typeCustomer: "God"
-        },
-        {
-            iD: 6,
-            fullName: "Nguyễn Duy Trung",
-            birthDay: "2003-09-02",
-            gender: "Nam",
-            idCard: "2343423232",
-            phone: "087897867",
-            email: "trung@gmail.com",
-            address: "Quảng Ngãi",
-            typeCustomer: "Silver"
-        },
-        {
-            iD: 7,
-            fullName: "Trương Viết Huy",
-            birthDay: "2000-05-02",
-            gender: "Nam",
-            idCard: "234343234",
-            phone: "095542535",
-            email: "huyml@gmail.com",
-            address: "Nghệ An",
-            typeCustomer: "Platinium"
-        },
-        {
-            iD: 8,
-            fullName: "Nguyễn Bảo Long",
-            birthDay: "1998-04-03",
-            gender: "Nam",
-            idCard: "656575656565",
-            phone: "0987826635",
-            email: "longml@gmail.com",
-            address: "Bình Định",
-            typeCustomer: "God"
-        }
-    ];
-    let content = '';
-    for (let i = 0; i < customer.length; i++) {
-        content += getCustomer(customer[i]);
-    }
-    document.getElementById('customerList').innerHTML = content
+<div class="container">
+    <div class=" bg-light">
+        <h1 class="text-warning text-center"> THÊM MỚI KHÁCH HÀNG</h1>
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <form>
+                    <div class="form-group">
+                        <label for="inputNameCus">Full name:</label>
+                        <input type="text" class="form-control" id="inputNameCus">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputBirthCus">Date of birth:</label>
+                        <input type="date" class="form-control" id="inputBirthCus">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputGenderCus">Gender:</label>
+                        <select id="inputGenderCus" class="form-control w-25">
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
+                            <option value="2">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputIdCardCus">ID card:</label>
+                        <input type="text" class="form-control" id="inputIdCardCus">
 
-    function getCustomer(customer) {
-        console.log(customer)
-        return `<tr>
-            <td style="text-align: center" >${customer.iD} </td>
-            <td style="text-align: center" >${customer.fullName} </td>
-            <td style="text-align: center" >${customer.birthDay} </td>
-            <td style="text-align: center" >${customer.gender} </td>
-            <td style="text-align: center" >${customer.idCard} </td>
-            <td style="text-align: center" >${customer.phone} </td>
-            <td style="text-align: center" >${customer.email}</td>
-            <td style="text-align: center" >${customer.address} </td>
-            <td style="text-align: center" >${customer.typeCustomer} </td>
-            <td style="text-align: center" ><a href="../customer/edit.html" class="btn btn-primary bi bi-pencil-square"></</td>
-               <td style="text-align: center"><a href="#" onclick="customerIndex(${customer.iD})" data-toggle="modal"
-                       data-target="#delete" class="btn btn-primary bi bi-trash3">
-                    </a></td>
-                 </tr>`
-    }
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPhoneCus">Phone:</label>
+                        <input type="text" class="form-control" id="inputPhoneCus">
 
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1"
+                               aria-describedby="emailHelp">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddressCus">Address:</label>
+                        <input type="text" class="form-control" id="inputAddressCus">
 
-    var id;
+                    </div>
+                    <div class="form-group">
+                        <label for="inputTypeOfCus">Type of customer:</label>
+                        <select id="inputTypeOfCus" class="form-control w-25">
+                            <option value="1">Platinium</option>
+                            <option value="2"> God</option>
+                            <option value="3"> Silver</option>
+                            <option value="4"> Member</option>
+                        </select>
+                    </div>
+                    <div style="float: right">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
 
-    function customerIndex(index) {
-        document.getElementById("thongBao").innerHTML = "Bạn có muốn xóa  khách hàng có id là:  " + index;
-        id = index;
-    };
-    function customerIndex2() {
-        let link = "#" + id;
-        window.location.href = link;
-    };
-
-</script>
-<div class="modal" id="delete">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title w-100 text-center">Bạn có muốn xóa Room</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-dark" onclick="customerIndex2()">
-                    <a class="text-white">Xóa</a>
-                </button>
-                <button type="button" class="btn btn-dark " data-dismiss="modal">Hủy</button>
-            </div>
+            <div class="col-lg-3"></div>
         </div>
     </div>
 </div>
-<div class="row" style="background-color: #addccf">
+<div class="row" style="background-color: #addccf ; padding-top: 50px;">
     <div class="row">
         <div class="col-md-3" style="padding-left: 150px">
             <h2 class="mb-1">Hướng Dẫn Di Chuyển</h2>
@@ -384,5 +275,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>
