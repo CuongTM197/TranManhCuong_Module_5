@@ -1,0 +1,17 @@
+<h2>CALCULATOR</h2>
+<label>
+  Number 1:
+  <input type="text" [(ngModel)]="number1">
+</label>
+<br>
+<label>
+  Number 2:
+  <input type="text" [(ngModel)]="number2">
+</label>
+<br>
+<button (click)="Addition()"> +</button>
+<button (click)="subtraction()"> -</button>
+<button (click)="Multiplication()"> *</button>
+<button (click)="Division()"> /</button>
+<br>
+<h4> Kết quả = {{result}}</h4>
