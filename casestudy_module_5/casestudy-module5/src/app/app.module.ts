@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { FacilityComponent } from './facility/facility.component';
+import { CustomerComponent } from './customer/customer.component';
+import {EditFacilityComponent} from "./edit-facility/edit-facility.component";
+import { FuramaComponent } from './furama/furama.component';
+
 
 
 @NgModule({
@@ -14,6 +18,9 @@ import { FacilityComponent } from './facility/facility.component';
     HeaderComponent,
     FooterComponent,
     FacilityComponent,
+    CustomerComponent,
+    EditFacilityComponent,
+    FuramaComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,41 @@
+.catalog-widget {
+  position: relative;
+  top: 4px;
+  left: 0;
+  min-height: 150px;
+}
+
+.catalog-widget-inside {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 0 5px;
+  background-color: white;
+  transition: 0s;
+}
+
+.header-contact {
+  font-size: 20px;
+  line-height: 1.6em;
+  position: relative;
+  top: 5px;
+}
+
+.header-contact-icon {
+  min-width: 28px;
+}
+
+.header-contact-txt {
+  font-size: 15px;
+  line-height: 1.6em;
+}
+
+.txt-sm {
+  font-size: 16px;
+}
+
+.txt-lg {
+  font-size: 15px;
+}

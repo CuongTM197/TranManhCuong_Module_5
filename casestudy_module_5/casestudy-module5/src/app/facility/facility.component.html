@@ -1,4 +1,3 @@
-<app-header></app-header>
 <div class="container-fluid">
   <div class="row d-flex justify-content-center" style="background-color:cadetblue">
     <div class="card ml-2 " style="width: 28rem;">
@@ -9,7 +8,8 @@
         <h5 class="card-title">New Room 1</h5>
         <p class="card-text">Room size: 35.5m</p>
         <div class="middle">
-          <a href="../task2/edit.html" class="btn btn-primary bi bi-pencil-square"></a>
+          <a class="btn btn-primary bi bi-pencil-square" [routerLink]="['/editFacility']"
+             routerLinkActive="router-link-active"></a>
           <a href="#" onclick="customerIndex(${customer.id})" data-toggle="modal"
              data-target="#delete" class="btn btn-primary bi bi-trash3">
           </a>
@@ -26,7 +26,8 @@
         <h5 class="card-title">New Room 2</h5>
         <p class="card-text">Room size: 40.0m</p>
         <div class="middle">
-          <a href="../task2/edit.html" class="btn btn-primary bi bi-pencil-square"></a>
+          <a [routerLink]="['/editFacility']" routerLinkActive="router-link-active"
+             class="btn btn-primary bi bi-pencil-square"></a>
           <a href="#" onclick="customerIndex(${customer.id})" data-toggle="modal"
              data-target="#delete" class="btn btn-primary bi bi-trash3">
           </a>
@@ -42,7 +43,8 @@
         <h5 class="card-title">New Room 3</h5>
         <p class="card-text">Room size: 35.5m</p>
         <div class="middle">
-          <a href="../task2/edit.html" class="btn btn-primary bi bi-pencil-square"></a>
+          <a [routerLink]="['/editFacility']" routerLinkActive="router-link-active"
+             class="btn btn-primary bi bi-pencil-square"></a>
           <a href="#" onclick="customerIndex(${customer.id})" data-toggle="modal"
              data-target="#delete" class="btn btn-primary bi bi-trash3">
           </a>
@@ -59,7 +61,8 @@
         <h5 class="card-title">New Room 4</h5>
         <p class="card-text">Room size: 35.5m</p>
         <div class="middle">
-          <a href="../task2/edit.html" class="btn btn-primary bi bi-pencil-square"></a>
+          <a [routerLink]="['/editFacility']" routerLinkActive="router-link-active"
+             class="btn btn-primary bi bi-pencil-square"></a>
           <a href="#" onclick="customerIndex(${customer.id})" data-toggle="modal"
              data-target="#delete" class="btn btn-primary bi bi-trash3">
           </a>
@@ -75,7 +78,8 @@
         <h5 class="card-title">New Room 5</h5>
         <p class="card-text">Room size: 40.0m</p>
         <div class="middle">
-          <a href="../task2/edit.html" class="btn btn-primary bi bi-pencil-square"></a>
+          <a [routerLink]="['/editFacility']" routerLinkActive="router-link-active"
+             class="btn btn-primary bi bi-pencil-square"></a>
           <a href="#" onclick="customerIndex(${customer.id})" data-toggle="modal"
              data-target="#delete" class="btn btn-primary bi bi-trash3">
           </a>
@@ -91,7 +95,8 @@
         <h5 class="card-title">New Room 6</h5>
         <p class="card-text">Room size: 35.5m</p>
         <div class="middle">
-          <a href="../task2/edit.html" class="btn btn-primary bi bi-pencil-square"></a>
+          <a [routerLink]="['/editFacility']" routerLinkActive="router-link-active"
+             class="btn btn-primary bi bi-pencil-square"></a>
           <a href="#" onclick="customerIndex(${customer.id})" data-toggle="modal"
              data-target="#delete" class="btn btn-primary bi bi-trash3">
           </a>
@@ -100,7 +105,6 @@
     </div>
   </div>
 </div>
-<app-footer></app-footer>
 <div class="modal" id="delete">
   <div class="modal-dialog">
     <div class="modal-content">

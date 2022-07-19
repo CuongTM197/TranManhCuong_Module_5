@@ -1,0 +1,9 @@
+<h2>Today's article</h2>
+<hr>
+
+<p *ngFor="let art of articles">
+  Hacker News: <a href="{{art.url}}" target="_blank">{{art.title}}</a>
+  <app-like></app-like>
+</p>
+
+
