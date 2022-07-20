@@ -3,13 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CalculatoComponent } from './calculato/calculato.component';
 import {FormsModule} from "@angular/forms";
+import { CalculatorComponent } from './calculator/calculator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CalculatoComponent
+    CalculatorComponent,
+
   ],
   imports: [
     BrowserModule,

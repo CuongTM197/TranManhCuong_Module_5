@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-calculato',
-  templateUrl: './calculato.component.html',
-  styleUrls: ['./calculato.component.css']
+  selector: 'app-calculator',
+  templateUrl: './calculator.component.html',
+  styleUrls: ['./calculator.component.css']
 })
-export class CalculatoComponent implements OnInit {
+export class CalculatorComponent implements OnInit {
   number1: number = 0;
   number2: number = 0;
   result: number = 0;
@@ -31,4 +31,5 @@ export class CalculatoComponent implements OnInit {
   Division() {
     this.result = this.number1 / this.number2;
   }
+
 }
