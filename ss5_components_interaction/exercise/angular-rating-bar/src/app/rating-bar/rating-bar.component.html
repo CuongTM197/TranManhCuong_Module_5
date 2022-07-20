@@ -1,0 +1,26 @@
+<div class="row d-flex justify-content-center">
+  <div class="card ml-2" style="width: 28rem;">
+    <img class="card-img-top image"
+         src="https://i.imgur.com/0jW3tCl.jpg"
+         alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">NGÔI MỘ ĐOM ĐÓM</h4>
+      <p class="card-text">Ngày khởi chiếu: 10-07-2022</p>
+      <p class="card-text">Thể loại: Anime, Tâm lý, Tình cảm</p>
+    </div>
+  </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+  <div>
+
+  </div>
+  <ul class="list-inline rating-list" *ngFor="let star of stars; let i= index">
+    <li (click)="countStar(star)" [ngClass]="{'selected': (star <= selectedValue)}" (mouseover)="addStart(star)"
+        (mouseout)="removeStart()"><span style="size: 25px" class="bi bi-star-fill"></span>
+    </li>
+  </ul>
+</div>
+
+
+
