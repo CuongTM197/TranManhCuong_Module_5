@@ -8,7 +8,6 @@ import {FormsModule} from "@angular/forms";
 import { LikeComponent } from './like/like.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component';
 import { CreateComponent } from './create/create.component';
 
 @NgModule({
@@ -18,7 +17,6 @@ import { CreateComponent } from './create/create.component';
     LikeComponent,
     NavbarComponent,
     FooterComponent,
-    HomeComponent,
     CreateComponent
   ],
   imports: [
