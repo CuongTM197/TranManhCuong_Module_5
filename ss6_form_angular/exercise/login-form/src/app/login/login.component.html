@@ -1,0 +1,49 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="row d-flex justify-content-center">
+    <div class="col-5">
+      <div class="card">
+        <div class=" d-flex justify-content-center bg-light">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw64X634oILh4sCby4DITES3QhIB8YGR5tig&usqp=CAU"
+               alt="">
+        </div>
+        <div class="mb-3">
+          <h2>Login an account</h2>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <h6>Email</h6>
+            <input type="text" class="form-control" formControlName="email" placeholder="Enter your email">
+          </div>
+          <div class="mb-3 text-danger"
+               *ngIf="loginForm.controls.email.hasError('email') && loginForm.controls.email.dirty">
+            <small>Email is invalid or empty</small>
+          </div>
+          <div class="mb-3 text-danger"
+               *ngIf="loginForm.controls.email.hasError('required') && loginForm.controls.email.dirty">
+            <small>Email is invalid or empty</small>
+          </div>
+
+          <div class="form-group">
+            <h6>Password</h6>
+            <input type="password" class="form-control" formControlName="password"
+                   placeholder="Enter your password">
+          </div>
+          <div class="mb-3 text-danger"
+               *ngIf="loginForm.controls.password.hasError('required') && loginForm.controls.password.dirty">
+            <small>Password is not empty</small>
+          </div>
+
+          <div class="mb-3 text-danger"
+               *ngIf="loginForm.controls.password.hasError('minlength') && loginForm.controls.password.dirty">
+            <small>Password length must be more than 6 characters </small>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form>

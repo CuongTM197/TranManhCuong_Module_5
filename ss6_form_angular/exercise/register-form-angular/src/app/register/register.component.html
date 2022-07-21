@@ -1,0 +1,108 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="row d-flex justify-content-center">
+    <div class="col-5 ">
+      <div class="card">
+        <div class="card-header d-flex justify-content-center bg-primary">
+          <h1>Register an account</h1>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <h6>Email</h6>
+            <input type="text" class="form-control" formControlName="email" placeholder="Enter your email">
+          </div>
+          <div class="mb-3 text-danger"
+               *ngIf="registerForm.controls.email.hasError('email') && registerForm.controls.email.dirty">
+            <small>Email is invalid or empty</small>
+          </div>
+          <div class="mb-3 text-danger"
+               *ngIf="registerForm.controls.email.hasError('required') && registerForm.controls.email.dirty">
+            <small>Email is invalid or empty</small>
+          </div>
+
+          <div class="form-group">
+            <h6>Password</h6>
+            <input type="password" class="form-control" formControlName="password"
+                   placeholder="Enter your password">
+          </div>
+          <div class="mb-3 text-danger"
+               *ngIf="registerForm.controls.password.hasError('required') && registerForm.controls.password.dirty">
+            <small>Password is not empty</small>
+          </div>
+
+          <div class="mb-3 text-danger"
+               *ngIf="registerForm.controls.password.hasError('minlength') && registerForm.controls.password.dirty">
+            <small>Password length must be more than 6 characters </small>
+          </div>
+
+          <div class="form-group">
+            <h6>Confirm Password</h6>
+            <input type="password" class="form-control" formControlName="confirmPassword"
+                   placeholder="Enter your password">
+          </div>
+
+          <div class="mb-3 text-danger"
+               *ngIf="registerForm.controls.confirmPassword.hasError('minlength') && registerForm.controls.confirmPassword.dirty">
+            <small>Password length must be more than 6 characters </small>
+          </div>
+          <div class="mb-3 text-danger"
+               *ngIf="registerForm.errors?.errorcheckpassword">
+            <small>Password mismatch</small>
+          </div>
+          <div class="form-group">
+            <h6>Country</h6>
+            <select id="country" name="country" formControlName="country">
+              <option> Select country</option>
+              <option *ngFor="let c of countryList">
+                {{c.name}}
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <h6>Age</h6>
+            <input type="date" class="form-control" formControlName="age" placeholder="Enter your age">
+          </div>
+          <div class="mb-3 text-danger"
+               *ngIf="registerForm.controls.age.hasError('required') && registerForm.controls.age.dirty">
+            <small> Field is not empty</small>
+          </div>
+          <div class="mb-3 text-danger"
+               *ngIf="registerForm.controls.age.hasError('not18') && registerForm.controls.age.dirty">
+            <small>Over 18 years+</small>
+          </div>
+
+          <div class="form-group">
+            <h6>Gender</h6>
+            <input type="radio" value="male" name="gender" formControlName="gender"> Male
+            <input type="radio" value="female" iname="gender" formControlName="gender"> Female
+          </div>
+          <div class="mb-3 text-danger"
+               *ngIf="registerForm.controls.gender.hasError('required') && registerForm.controls.age.dirty">
+            <small> Field is not empty</small>
+          </div>
+
+          <div class="form-group">
+            <h6>Phone</h6>
+            <input type="text" class="form-control" formControlName="phone" placeholder="Enter your phone">
+          </div>
+        </div>
+        <div class="mb-3 text-danger"
+             *ngIf="registerForm.controls.phone.hasError('required') && registerForm.controls.phone.dirty">
+          <small> Field is not empty</small>
+        </div>
+        <div class="mb-3 text-danger"
+             *ngIf="registerForm.controls.phone.hasError('pattern') && registerForm.controls.phone.dirty">
+          <small> wrong format</small>
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>
