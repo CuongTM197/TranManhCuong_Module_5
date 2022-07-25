@@ -14,6 +14,7 @@ import { CreateFacilityComponent } from './service/create-facility/create-facili
 import { ContractComponent } from './contract-angular/contract/contract.component';
 import { CreateContractComponent } from './contract-angular/create-contract/create-contract.component';
 import { EditCustomerComponent } from './customer-angular/edit-customer/edit-customer.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -34,7 +35,9 @@ import { EditCustomerComponent } from './customer-angular/edit-customer/edit-cus
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

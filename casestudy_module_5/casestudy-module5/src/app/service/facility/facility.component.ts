@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {IFacility} from "./i-facility";
+import {Ifacility} from "./ifacility";
+import {FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-facility',
@@ -7,7 +8,7 @@ import {IFacility} from "./i-facility";
   styleUrls: ['./facility.component.css']
 })
 export class FacilityComponent implements OnInit {
-  facility: IFacility[] = [
+  facility: Ifacility[] = [
     {id:1,nameFacility:'Villa',area:30,rentalCosts:5000,numberPeople:5,rentalType:'Theo Ngày', url:'https://q-xx.bstatic.com/xdata/images/hotel/840x460/206966159.jpg?k=0e58f255ce4cff15910e017f5bdba1cb3b04febf22f1b0b1c69fe6856db6d6f3&o='},
     {id:1,nameFacility:'Villa',area:30,rentalCosts:5000,numberPeople:5,rentalType:'Theo Ngày', url:'https://q-xx.bstatic.com/xdata/images/hotel/840x460/206966048.jpg?k=7921878d7c76294674862c3cccece9b436fc4dfc4be0d6b10b8e6b0328d4c6c6&o='},
     {id:1,nameFacility:'Villa',area:30,rentalCosts:5000,numberPeople:5,rentalType:'Theo Ngày', url:'https://q-xx.bstatic.com/xdata/images/hotel/840x460/206744855.jpg?k=8bd8700a7a922106ca04e5545d125f1f59f9d3158d372e2def0950e2a69f37dd&o='},
@@ -17,6 +18,7 @@ export class FacilityComponent implements OnInit {
   ];
 
   constructor() {
+
   }
 
   ngOnInit(): void {

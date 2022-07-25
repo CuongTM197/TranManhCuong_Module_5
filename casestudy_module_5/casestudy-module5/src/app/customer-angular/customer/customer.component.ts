@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Icustomer} from "./icustomer";
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 
 
@@ -9,9 +10,24 @@ import {Icustomer} from "./icustomer";
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
-  constructor() { }
+
+  constructor() {
+    // this.customerForm = new FormGroup(
+    //   {
+    //     code: new FormControl('', [Validators.required, Validators.pattern('^KH-[0-9]{4}$')]),
+    //     fullName: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-z ]+$')]),
+    //     birthday: new FormControl('', [Validators.required]),
+    //     gender: new FormControl('', [Validators.required]),
+    //     idCard: new FormControl('', [Validators.required, Validators.pattern('^([0-9]{9}|[0-9]{12})$')]),
+    //     phone: new FormControl('', [Validators.required, Validators.pattern('^(090|091|\\(84\\)\\+90|\\(84\\)\\+91)[0-9]{7}$')]),
+    //     email: new FormControl('', [Validators.required, Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]),
+    //     address: new FormControl('', [Validators.required]),
+    //     typeCustomer: new FormControl('', [Validators.required])
+    //   });
+  }
   customer : Icustomer[] = [
-    {id:1,
+    {
+      code: 'KH-0001',
       fullName:'Tran Manh Cuong',
       birthDay:'1997-01-28',
       gender:1,
@@ -20,7 +36,8 @@ export class CustomerComponent implements OnInit {
       email:'cuong@gmail.com',
       address:'Quảng Bình',
       typeCustomer:'diamond'},
-    { id: 2,
+    {
+      code: 'KH-0002',
       fullName: "Trần Thị Tuyết",
       birthDay: "2000-02-10",
       gender: 0,
@@ -29,7 +46,8 @@ export class CustomerComponent implements OnInit {
       email: "tuyet@gmail.com",
       address: "Quảng Nam",
       typeCustomer: "God"},
-    {id: 3,
+    {
+      code: 'KH-0003',
       fullName: "Nguyễn Hà Phương",
       birthDay: "1996-09-05",
       gender: 1,
@@ -38,7 +56,8 @@ export class CustomerComponent implements OnInit {
       email: "phuong@gmail.com",
       address: "Hà Nội",
       typeCustomer: "Platinium"},
-    {id: 4,
+    {
+      code: 'KH-0004',
       fullName: "Mai Thế Hùng",
       birthDay: "1997-03-30",
       gender: 1,
@@ -49,6 +68,8 @@ export class CustomerComponent implements OnInit {
       typeCustomer: "Silver"}
   ]
   ngOnInit(): void {
+
+
   }
 
 }
