@@ -14,11 +14,11 @@ import {CreateContractComponent} from '../contract/create-contract/create-contra
 const routes: Routes = [
   {path: '', component: FuramaComponent},
   {path: 'facility', component: FacilityListComponent},
-  {path: 'editFacility', component: EditFacilityComponent},
+  {path: 'editFacility ', component: EditFacilityComponent},
   {path: 'createFacility', component: CreateFacilityComponent},
   {path: 'customerList', component: CustomerListComponent},
   {path: 'createCustomer', component: CreateCustomerComponent},
-  {path: 'editCustomer', component: EditCustomerComponent},
+  {path: 'editCustomer/:id', component: EditCustomerComponent},
   {path: 'createContract', component: CreateContractComponent},
   {path: 'contract', component: ContractListComponent}
 ];

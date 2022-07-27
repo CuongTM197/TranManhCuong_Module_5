@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Icustomer} from './icustomer';
+import {Icustomer} from '../icustomer';
+import {ServiceService} from '../../service.service';
+import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-customer-list',
@@ -7,57 +9,42 @@ import {Icustomer} from './icustomer';
   styleUrls: ['./customer-list.component.css']
 })
 export class CustomerListComponent implements OnInit {
-  customer: Icustomer[] = [
-    {
-      code: 'KH-0001',
-      fullName: 'Tran Manh Cuong',
-      birthDay: '1997-01-28',
-      gender: 1,
-      idCard: '6636362333',
-      phone: '0986787878',
-      email: 'cuong@gmail.com',
-      address: 'Quảng Bình',
-      typeCustomer: 'diamond'
-    },
-    {
-      code: 'KH-0002',
-      fullName: 'Trần Thị Tuyết',
-      birthDay: '2000-02-10',
-      gender: 0,
-      idCard: '4322323232',
-      phone: '0989898988',
-      email: 'tuyet@gmail.com',
-      address: 'Quảng Nam',
-      typeCustomer: 'God'
-    },
-    {
-      code: 'KH-0003',
-      fullName: 'Nguyễn Hà Phương',
-      birthDay: '1996-09-05',
-      gender: 1,
-      idCard: '74434344534',
-      phone: '0978797666',
-      email: 'phuong@gmail.com',
-      address: 'Hà Nội',
-      typeCustomer: 'Platinium'
-    },
-    {
-      code: 'KH-0004',
-      fullName: 'Mai Thế Hùng',
-      birthDay: '1997-03-30',
-      gender: 1,
-      idCard: '3232321212',
-      phone: '0989888877',
-      email: 'hung@gmail.com',
-      address: 'Thanh Hoá',
-      typeCustomer: 'Silver'
+  customers: Icustomer[] = [];
+  customerDelete: Icustomer = {
+    id: 0,
+    code: '',
+    fullName: '',
+    birthDay: '',
+    gender: 0,
+    idCard: '',
+    phone: '',
+    email: '',
+    address: '',
+    typeCustomer: {
+      id: 1,
+      nameType: 'Platinum'
     }
-  ];
-
-  constructor() {
+  };
+  constructor(private service: ServiceService) {
   }
 
   ngOnInit(): void {
+    this.getAll();
   }
 
+  getAll() {
+    this.service.getAllCustomer().subscribe(value => {
+      this.customers = value;
+    });
+  }
+
+  deleteCustomer(id: number) {
+    this.service.delete(id).subscribe(res => {
+      this.getAll();
+    });
+  }
+
+  getCustomerDelete(customer: Icustomer) {
+    this.customerDelete = customer;
+  }
 }

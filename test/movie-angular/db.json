@@ -1,0 +1,54 @@
+{
+  "moviesList": [
+    {
+      "id": 1,
+      "nameMovies": "Doreamon",
+      "showDate": "22-08-2022",
+      "category": {
+        "id": 1,
+        "name": "Hoạt hình"
+      }
+    },
+    {
+      "id": 2,
+      "nameMovies": "Người vận chuyển",
+      "showDate": "22-08-2022",
+      "category": {
+        "id": 2,
+        "name": "Hành động"
+      }
+    },
+    {
+      "id": 3,
+      "nameMovies": "Hạ cánh nơi anh",
+      "showDate": "22-08-2022",
+      "category": {
+        "id": 3,
+        "name": "Tình cảm"
+      }
+    },
+    {
+      "nameMovies": "bbbb",
+      "showDate": "2022-07-08",
+      "category": {
+        "id": 2,
+        "name": "Hành động"
+      },
+      "id": 4
+    }
+  ],
+  "categoryList": [
+    {
+      "id": 1,
+      "name": "Hoạt hình"
+    },
+    {
+      "id": 2,
+      "name": "Hành động"
+    },
+    {
+      "id": 3,
+      "name": "Tình cảm"
+    }
+  ]
+}

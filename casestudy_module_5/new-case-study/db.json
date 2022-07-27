@@ -1,19 +1,71 @@
 {
-  "posts": [
+  "customerList": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "code": "KH-0001",
+      "fullName": "Nguyen Ha Phuong",
+      "birthDay": "1997-10-20",
+      "gender": 1,
+      "idCard": "6636362333",
+      "phone": "0986787878",
+      "email": "cuong@gmail.com",
+      "address": "Quảng Bình",
+      "typeCustomer": {
+        "id": 1,
+        "nameType": "Platinum"
+      }
+    },
+    {
+      "id": 2,
+      "code": "KH-0002",
+      "fullName": "Trần Mạnh Cường",
+      "birthDay": "1997-10-20",
+      "gender": 1,
+      "idCard": "6636362333",
+      "phone": "0986787878",
+      "email": "cuong@gmail.com",
+      "address": "Quảng Bình",
+      "typeCustomer": {
+        "id": 4,
+        "nameType": "Silver"
+      }
+    },
+    {
+      "code": "KH-0004",
+      "fullName": "Tran Manh Cuong",
+      "birthDay": "2022-07-08",
+      "gender": 1,
+      "idCard": "3233223223123",
+      "phone": "0898989899",
+      "email": "cuong@gmail.com",
+      "address": "QB",
+      "typeCustomer": {
+        "id": "3",
+        "nameType": "Platinum"
+      },
+      "id": 3
     }
   ],
-  "comments": [
+  "typeCustomerList": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "nameType": "Platinum"
+    },
+    {
+      "id": 2,
+      "nameType": "Diamond"
+    },
+    {
+      "id": 3,
+      "nameType": "Gold"
+    },
+    {
+      "id": 4,
+      "nameType": "Silver"
+    },
+    {
+      "id": 5,
+      "nameType": "Member"
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

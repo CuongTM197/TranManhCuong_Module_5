@@ -3,7 +3,6 @@ import {FormControl} from "@angular/forms";
 import {Todo} from "../todo";
 import {TodoService} from "../service/todo.service";
 
-let _id = 1;
 
 @Component({
   selector: 'app-todo',

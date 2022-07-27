@@ -15,6 +15,7 @@ import { EditCustomerComponent } from './customer/edit-customer/edit-customer.co
 import { CreateCustomerComponent } from './customer/create-customer/create-customer.component';
 import { ContractListComponent } from './contract/contract-list/contract-list.component';
 import { CreateContractComponent } from './contract/create-contract/create-contract.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { CreateContractComponent } from './contract/create-contract/create-contr
     BrowserModule,
     CaseStudyRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

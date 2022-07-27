@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ProductService} from '../service/product.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {Category} from '../model/category';
+import {Product} from '../model/product';
 
 @Component({
   selector: 'app-product-edit',
@@ -9,35 +11,44 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./product-edit.component.css']
 })
 export class ProductEditComponent implements OnInit {
-  productForm: FormGroup;
-  id: number;
+  categoryObj: Category[] = [];
+  products: Product;
+  editForm: FormGroup;
 
-  constructor(private productService: ProductService, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private productService: ProductService,
+              private activatedRoute: ActivatedRoute,
+              private router: Router) {
   }
 
   ngOnInit(): void {
-    const productId = Number(this.activatedRoute.snapshot.params.productId);
-    const product = this.getProduct(productId);
-
-    this.productForm = new FormGroup({
-      id: new FormControl(product.id),
-      name: new FormControl(product.name),
-      price: new FormControl(product.price),
-      description: new FormControl(product.description)
+    this.getCategory();
+    this.editForm = new FormGroup({
+      name: new FormControl('', [Validators.required]),
+      price: new FormControl('', [Validators.required]),
+      description: new FormControl('', [Validators.required]),
+      category: new FormControl('')
+    });
+    const id = Number(this.activatedRoute.snapshot.params.id);
+    this.productService.findById(id).subscribe(value => {
+      this.products = value;
+      this.editForm.patchValue(this.products);
     });
   }
 
-  updateInfoProduct(): void {
-    this.router.navigateByUrl('/product/list');
+  getCategory() {
+    this.productService.getCategory().subscribe(value => {
+      this.categoryObj = value;
+    });
   }
-
-  getProduct(id: number) {
-    return this.productService.findById(id);
+  onsubmit() {
+    const product = this.editForm.value;
+    product.id = this.products.id;
+    this.productService.updateProduct(this.products.id, this.editForm.value).subscribe(res => {
+      this.router.navigateByUrl('');
+      this.editForm.reset();
+    });
   }
-  updateProduct() {
-    console.log(this.productForm.value);
-    const product = this.productForm.value;
-    this.productService.updateProduct(product);
-    alert('Update success');
+  compareWithId(item1, item2) {
+    return item1 && item2 && item1.id === item2.id;
   }
 }

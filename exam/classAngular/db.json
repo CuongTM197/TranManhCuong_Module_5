@@ -1,0 +1,68 @@
+{
+  "studentList": [
+    {
+      "id": 2,
+      "name": "Nguyễn Hà Phương",
+      "birthDay": "28-01-1998",
+      "address": "QB",
+      "class": {
+        "id": 2,
+        "nameClass": "C0222G2"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Mai Thế Hùng",
+      "birthDay": "28-01-1999",
+      "address": "QB",
+      "class": {
+        "id": 3,
+        "nameClass": "C0333G3"
+      }
+    },
+    {
+      "name": "xxxxccc",
+      "birthDay": "2022-07-09",
+      "address": "vvvv",
+      "class": {
+        "id": 3,
+        "nameClass": "C0333G3"
+      },
+      "id": 4
+    },
+    {
+      "name": "cccvvv",
+      "birthDay": "2022-07-03",
+      "address": "ccc",
+      "class": {
+        "id": 1,
+        "nameClass": "C0222G1"
+      },
+      "id": 5
+    },
+    {
+      "name": "Trần Mạnh Cường",
+      "birthDay": "2022-07-09",
+      "address": "Quảng Bình",
+      "class": {
+        "id": 2,
+        "nameClass": "C0222G2"
+      },
+      "id": 6
+    }
+  ],
+  "classList": [
+    {
+      "id": 1,
+      "nameClass": "C0222G1"
+    },
+    {
+      "id": 2,
+      "nameClass": "C0222G2"
+    },
+    {
+      "id": 3,
+      "nameClass": "C0333G3"
+    }
+  ]
+}

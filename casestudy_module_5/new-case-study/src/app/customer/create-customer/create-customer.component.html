@@ -31,16 +31,16 @@
           </div>
           <div class="form-group">
             <label for="inputBirthCus">Date of birth:</label>
-            <input type="date" class="form-control" id="inputBirthCus" formControlName="birthday">
+            <input type="date" class="form-control" id="inputBirthCus" formControlName="birthDay">
             <div class="mb-3 text-danger"
-                 *ngIf="customerForm.controls.birthday.hasError('required') && customerForm.controls.birthday.dirty">
+                 *ngIf="customerForm.controls.birthDay.hasError('required') && customerForm.controls.birthDay.dirty">
               <small>Field is invalid or empty</small>
             </div>
           </div>
           <div class="form-group">
             <label >Gender:</label>
             <select class="form-control w-25" formControlName="gender">
-              <option value="1">Male</option>
+              <option value="1" selected>Male</option>
               <option value="0">Female</option>
               <option value="2">Other</option>
             </select>
@@ -51,7 +51,7 @@
           </div>
           <div class="form-group">
             <label for="inputIdCardCus">ID card:</label>
-            <input type="text" class="form-control" id="inputIdCardCus" formControlName="">
+            <input type="text" class="form-control" id="inputIdCardCus" formControlName="idCard">
           </div>
           <div class="mb-3 text-danger"
                *ngIf="customerForm.controls.idCard.hasError('required') && customerForm.controls.idCard.dirty">
@@ -83,17 +83,15 @@
                *ngIf="customerForm.controls.address.hasError('required') && customerForm.controls.address.dirty">
             <small>Field is invalid or empty</small>
           </div>
-          <div class="form-group">
+          <div class="form-group" >
             <label for="inputTypeOfCus">Type of customer:</label>
-            <select id="inputTypeOfCus" class="form-control w-25">
-              <option value="1">Platinium</option>
-              <option value="2"> God</option>
-              <option value="3"> Silver</option>
-              <option value="4"> Member</option>
+            <select id="inputTypeOfCus" class="form-control" formGroupName="typeCustomer">
+              <option value="">-Loại khách-</option>
+              <option [ngValue]="temp" *ngFor="let temp of customerType">{{temp.nameType}}</option>
             </select>
           </div>
           <div style="float: right">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" (click)="addNew()">Submit</button>
           </div>
 
         </form>

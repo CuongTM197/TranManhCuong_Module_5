@@ -1,0 +1,42 @@
+<form [formGroup]="studentForm"  novalidate>
+  <div class="row d-flex justify-content-center">
+    <div class="col-5 ">
+      <div class="card">
+        <div class="card-header d-flex justify-content-center bg-primary">
+          <h1>Student an account</h1>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <h6>Name</h6>
+            <input type="text" class="form-control" formControlName="name" placeholder="Enter your email">
+          </div>
+          <div class="mb-3 text-danger"
+               *ngIf="studentForm.controls.name.hasError('required') && studentForm.controls.name.dirty">
+            <small>Field is invalid or empty</small>
+          </div>
+          <div class="mb-3 text-danger"
+               *ngIf="studentForm.controls.name.hasError('pattern') && studentForm.controls.name.dirty">
+            <small>Wrong format !!</small>
+          </div>
+
+          <div class="form-group">
+            <h6>Address</h6>
+            <input type="password" class="form-control" formControlName="address"
+                   placeholder="Enter your password">
+          </div>
+          <div class="mb-3 text-danger"
+               *ngIf="studentForm.controls.address.hasError('required') && studentForm.controls.address.dirty">
+            <small>Filed is not empty</small>
+          </div>
+
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  </div>
+</form>

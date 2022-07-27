@@ -1,0 +1,48 @@
+{
+  "productList": [
+    {
+      "id": 1,
+      "name": "Iphone X",
+      "price": 5000,
+      "description": "Like new",
+      "category": {
+        "id": 1,
+        "nameCategory": "Apple"
+      }
+    },
+    {
+      "id": 2,
+      "name": "S20 Young",
+      "price": 8000,
+      "description": "99%",
+      "category": {
+        "id": 2,
+        "nameCategory": "Sam Sung"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Sm5",
+      "price": 4000,
+      "description": "Fake",
+      "category": {
+        "id": 3,
+        "nameCategory": "Vivo"
+      }
+    }
+  ],
+  "categoryList": [
+    {
+      "id": 1,
+      "nameCategory": "Apple"
+    },
+    {
+      "id": 2,
+      "nameCategory": "Sam Sung"
+    },
+    {
+      "id": 3,
+      "nameCategory": "ViVo"
+    }
+  ]
+}
