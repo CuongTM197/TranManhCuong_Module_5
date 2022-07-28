@@ -1,0 +1,134 @@
+
+<div class="col-12">
+  <div class="table-responsive">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-8"><h2>Product <b>Details</b></h2></div>
+          <div class="col-sm-4">
+            <a type="button" data-toggle="modal" data-target="#exampleModalLong1"
+               class="btn btn-primary bi bi-plus-circle d-flex justify-content-center">Thêm mới</a>
+          </div>
+          <div class="col-sm-4">
+            <!--            <app-search (eventEmitter)="getListFromSearch($event)"></app-search>-->
+          </div>
+
+        </div>
+      </div>
+      <table class="table table-striped table-hover table-bordered">
+        <thead>
+        <tr class="text-align-center">
+          <th>#</th>
+          <th>NAME PRODUCT <i class="fa fa-sort"></i></th>
+          <th>PRICE</th>
+          <th>DESCRIPTION</th>
+          <th>CATEGORY <i class="fa fa-sort"></i></th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let pr of products">
+          <td>{{pr.id}}</td>
+          <td>{{pr.name}}</td>
+          <td>{{pr.price}}</td>
+          <td>{{pr.description}}</td>
+          <td>{{pr.category.nameCategory}}</td>
+          <td>
+            <a routerLink="/editProduct/{{pr.id}}" type="button"
+               class="edit bi bi-pencil-square "></a>
+            <!--            <a type="button" title="Edit" data-toggle="modal" data-target="#exampleModalLong2"  class="edit bi bi-pencil-square"></a>-->
+            <!--            <a class="delete bi bi-trash" title="Delete"  data-toggle="modal" data-target="#exampleModal"></a>-->
+            <a type="button" title="Delete" data-toggle="modal" data-target="#exampleModalLong"
+               class="delete bi bi-trash3 " (click)="getProduct(pr)">
+            </a>
+
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <div class="clearfix">
+        <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+        <ul class="pagination">
+          <li class="page-item disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+          <li class="page-item"><a href="#" class="page-link">1</a></li>
+          <li class="page-item"><a href="#" class="page-link">2</a></li>
+          <li class="page-item active"><a href="#" class="page-link">3</a></li>
+          <li class="page-item"><a href="#" class="page-link">4</a></li>
+          <li class="page-item"><a href="#" class="page-link">5</a></li>
+          <li class="page-item"><a href="#" class="page-link"><i class="fa fa-angle-double-right"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLong"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Bạn có muốn xoá học sinh ?
+        <br>
+        {{productDelete.name}}
+        <br>
+        Có ID: {{productDelete.id}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="deleteProduct(productDelete.id)">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="exampleModalLong1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLong1"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Create Student</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="productForm">
+          <div class="form-group">
+            <label>Name Product</label>
+            <input type="text" class="form-control" placeholder="Enter name student" formControlName="name">
+          </div>
+          <div class="form-group">
+            <label>Price</label>
+            <input type="text" class="form-control" formControlName="price">
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <input type="text" class="form-control" formControlName="description">
+          </div>
+          <div class="form-group">
+            <label>Category</label>
+            <select class="form-control" formControlName="category">
+              <option value="">-Chọn lớp-</option>
+              <option [ngValue]="temp" *ngFor="let temp of categoryObj">{{temp.nameCategory}}</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addNew()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
