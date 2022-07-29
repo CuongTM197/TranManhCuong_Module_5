@@ -6,7 +6,7 @@
           <div class="col-sm-8"><h2>Ticket List <b>Codegym</b></h2></div>
           <div class="col-sm-2">
             <a type="button" data-toggle="modal" data-target="#exampleModalLong1"
-               class="plus b btn btn-dark bi bi-ticket-perforated-fill d-flex justify-content-center"></a>
+               class="plus b btn bg-info bi bi-ticket-perforated-fill d-flex justify-content-center"></a>
           </div>
           <div class="col-sm-4">
             <div class="search-box">
@@ -18,7 +18,7 @@
       </div>
       <table class="table table-striped table-hover table-bordered" >
         <thead style="text-align: center">
-        <tr>
+        <tr style="background-color: #2e76b6">
           <th>ĐIỂM ĐI</th>
           <th>ĐIỂM ĐẾN</th>
           <th>GIÁ VÉ</th>
@@ -40,9 +40,9 @@
           <td>{{ticket.count}}</td>
           <td style="text-align: center">
             <a type="button" title="Delete" data-toggle="modal" data-target="#exampleModalLong"
-               class="order btn btn-dark bi bi-plus-circle" (click)="getTicket(ticket)"></a>
+               class="order btn bg-info bi bi-plus-circle" (click)="getTicket(ticket)"></a>
             <a type="button" title="Delete" data-toggle="modal" data-target="#exampleModalLong2"
-               class="order btn btn-dark bi bi-trash3-fill" (click)="getTicket(ticket)"></a>
+               class="order btn bg-info bi bi-trash3-fill" (click)="getTicket(ticket)"></a>
           </td>
 
         </tr>

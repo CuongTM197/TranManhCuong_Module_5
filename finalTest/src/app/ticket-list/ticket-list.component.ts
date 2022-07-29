@@ -104,6 +104,7 @@ export class TicketListComponent implements OnInit {
   }
 
   orderTicket(ticket: Ticket) {
+    console.log(ticket.count);
     if (ticket.count > 0) {
       ticket.count = ticket.count - 1;
       this.ticketService.orderTicket(ticket).subscribe(res => {

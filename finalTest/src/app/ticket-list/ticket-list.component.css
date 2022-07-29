@@ -71,7 +71,7 @@ table.table td a.edit {
   color: #FFC107;
 }
 table.table td a.order {
-  color: coral;
+  color: #9a3009;
 }
 table.table td i {
   font-size: 19px;
@@ -114,5 +114,5 @@ table.table td i {
   font-size: 95%;
 }
 a.plus{
-  color: coral;
+  color: #b3431c;
 }
