@@ -30,8 +30,9 @@ public class TicketService implements ITicketService {
 
     @Override
     public List<Ticket> searchByStart(String keyWord) {
-        return iTicketRepository.searchByStart("%"+keyWord+"%");
+        return iTicketRepository.searchByStart("%" + keyWord + "%");
     }
+
 
     @Override
     public void update(Ticket ticket) {
@@ -40,6 +41,6 @@ public class TicketService implements ITicketService {
 
     @Override
     public void remove(int id) {
-
+        iTicketRepository.deleteById(id);
     }
 }

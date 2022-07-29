@@ -31,8 +31,10 @@ export class TicketService {
   }
 
   orderTicket(ticket: Ticket): Observable<Ticket> {
-
-
     return this.httpClient.put<Ticket>(this.baseUrl + 'order-ticket', ticket);
+  }
+
+  delete(id: number): Observable<Ticket> {
+    return this.httpClient.delete<Ticket>(this.baseUrl + 'delete-ticket/' + id);
   }
 }

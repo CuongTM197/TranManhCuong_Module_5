@@ -11,6 +11,8 @@ import {ToastrService} from 'ngx-toastr';
   styleUrls: ['./ticket-list.component.css']
 })
 export class TicketListComponent implements OnInit {
+  totalLength: any;
+  page = 1;
   tickets: Ticket[] = [];
   ticketAddNew: Ticket;
   houseCarObj: HouseCar[] = [];
@@ -118,4 +120,10 @@ export class TicketListComponent implements OnInit {
   }
 
 
+  deleteTicket(id: number) {
+    this.ticketService.delete(id).subscribe(res => {
+      this.getAll();
+    });
+    this.toastr.success('Delete Ticket successfully!', 'Hi!');
+  }
 }

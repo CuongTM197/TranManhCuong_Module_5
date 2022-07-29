@@ -70,8 +70,8 @@ table.table td a.view {
 table.table td a.edit {
   color: #FFC107;
 }
-table.table td a.delete {
-  color: #E34724;
+table.table td a.order {
+  color: coral;
 }
 table.table td i {
   font-size: 19px;
@@ -112,4 +112,7 @@ table.table td i {
   float: left;
   margin-top: 6px;
   font-size: 95%;
+}
+a.plus{
+  color: coral;
 }

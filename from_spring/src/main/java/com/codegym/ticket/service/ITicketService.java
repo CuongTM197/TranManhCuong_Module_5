@@ -1,9 +1,6 @@
 package com.codegym.ticket.service;
 
 import com.codegym.ticket.model.Ticket;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-
 import java.util.List;
 
 public interface ITicketService {
@@ -14,6 +11,7 @@ public interface ITicketService {
     Ticket findById(int id);
 
     List<Ticket> searchByStart(String keyWord);
+
 
     void update(Ticket ticket);
 

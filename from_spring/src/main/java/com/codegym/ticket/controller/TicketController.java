@@ -7,7 +7,6 @@ import com.codegym.ticket.service.ITicketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -54,5 +53,11 @@ public class TicketController {
     public ResponseEntity<?> search(@RequestParam String keyWord) {
         List<Ticket> tickets = iTicketService.searchByStart(keyWord);
         return new ResponseEntity<>(tickets, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete-ticket/{id}")
+    public ResponseEntity<?> remove(@PathVariable Integer id) {
+        iTicketService.remove(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
