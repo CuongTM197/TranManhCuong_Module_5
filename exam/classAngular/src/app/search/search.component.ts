@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormControl} from "@angular/forms";
 import {StudentService} from "../student.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-search',
@@ -12,7 +13,7 @@ export class SearchComponent implements OnInit {
   input = new FormControl();
   @Output() eventEmitter = new EventEmitter();
 
-  constructor(private studentService: StudentService) {
+  constructor(private studentService: StudentService,private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -22,5 +23,6 @@ export class SearchComponent implements OnInit {
     this.studentService.search(this.input.value).subscribe(value => {
       this.eventEmitter.emit(value);
     })
+    this.toastr.success('Find students !', 'Hi!');
   }
 }

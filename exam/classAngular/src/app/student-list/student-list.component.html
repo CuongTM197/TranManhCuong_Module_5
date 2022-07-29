@@ -26,7 +26,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let student of students ">
+        <tr *ngFor="let student of students | paginate: {itemsPerPage: 2, currentPage: page, totalItems: totalLength }">
           <td>{{student.id}}</td>
           <td>{{student.name}}</td>
           <td>{{student.birthDay}}</td>
@@ -47,16 +47,7 @@
         </tbody>
       </table>
       <div class="clearfix">
-        <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
-        <ul class="pagination">
-          <li class="page-item disabled"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
-          <li class="page-item"><a href="#" class="page-link">1</a></li>
-          <li class="page-item"><a href="#" class="page-link">2</a></li>
-          <li class="page-item active"><a href="#" class="page-link">3</a></li>
-          <li class="page-item"><a href="#" class="page-link">4</a></li>
-          <li class="page-item"><a href="#" class="page-link">5</a></li>
-          <li class="page-item"><a href="#" class="page-link"><i class="fa fa-angle-double-right"></i></a></li>
-        </ul>
+        <pagination-controls (pageChange)="page = $event">...</pagination-controls>
       </div>
     </div>
   </div>
@@ -107,13 +98,25 @@
             <label>Name Student</label>
             <input type="text" class="form-control" placeholder="Enter name student" formControlName="name">
           </div>
+          <div class="mb-3 text-danger"
+               *ngIf="studentForm.controls.name.hasError('required') && studentForm.controls.name.dirty">
+            <small>Field is not empty</small>
+          </div>
           <div class="form-group">
             <label>Birth Day</label>
             <input type="date" class="form-control" formControlName="birthDay">
           </div>
+          <div class="mb-3 text-danger"
+               *ngIf="studentForm.controls.birthDay.hasError('required') && studentForm.controls.birthDay.dirty">
+            <small>Field is not empty</small>
+          </div>
           <div class="form-group">
             <label>Address</label>
             <input type="text" class="form-control" formControlName="address">
+          </div>
+          <div class="mb-3 text-danger"
+               *ngIf="studentForm.controls.address.hasError('required') && studentForm.controls.address.dirty">
+            <small>Field is not empty</small>
           </div>
           <div class="form-group">
             <label>Class</label>
@@ -121,6 +124,10 @@
               <option value="">-Chọn lớp-</option>
               <option [ngValue]="temp" *ngFor="let temp of classObj">{{temp.nameClass}}</option>
             </select>
+          </div>
+          <div class="mb-3 text-danger"
+               *ngIf="studentForm.controls.class.hasError('required') && studentForm.controls.class.dirty">
+            <small>Field is not empty</small>
           </div>
         </form>
       </div>

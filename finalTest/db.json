@@ -1,0 +1,83 @@
+{
+  "ticketList": [
+    {
+      "id": 1,
+      "start": "Đà Nẵng",
+      "end": "Huế,",
+      "price": 100000,
+      "startDay": "06-09-2022",
+      "startTime": "20:00",
+      "houseCar": {
+        "id": 1,
+        "name": "Phương Trang"
+      },
+      "count": 10
+    },
+    {
+      "id": 2,
+      "start": "Đà Nẵng",
+      "end": "Hải Phòng,",
+      "price": 500000,
+      "startDay": "10-09-2022",
+      "startTime": "06:00",
+      "houseCar": {
+        "id": 2,
+        "name": "Trung Nguyên"
+      },
+      "count": 5
+    },
+    {
+      "id": 3,
+      "start": "Đà Nẵng",
+      "end": "Hà Nội,",
+      "price": 120000,
+      "startDay": "09-09-2022",
+      "startTime": "07:00",
+      "houseCar": {
+        "id": 3,
+        "name": "Trung Tín"
+      },
+      "count": 15
+    },
+    {
+      "start": "Thanh Hoá",
+      "end": "Hà Tĩnh",
+      "price": "2000000",
+      "startDay": "2022-07-09",
+      "startTime": "11:00",
+      "houseCar": {
+        "id": 1,
+        "name": "Phương Trang"
+      },
+      "count": "11",
+      "id": 4
+    },
+    {
+      "start": "Huế",
+      "end": "Thanh Hoá",
+      "price": "11111111",
+      "startDay": "2022-07-09",
+      "startTime": "11:00",
+      "houseCar": {
+        "id": 3,
+        "name": "Trung Tín"
+      },
+      "count": "11",
+      "id": 5
+    }
+  ],
+  "houseCar": [
+    {
+      "id": 1,
+      "name": "Phương Trang"
+    },
+    {
+      "id": 2,
+      "name": "Trung Nguyên"
+    },
+    {
+      "id": 3,
+      "name": "Trung Tín"
+    }
+  ]
+}

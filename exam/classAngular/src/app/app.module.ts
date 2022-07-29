@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { ToastrModule} from 'ngx-toastr';
 import { SearchComponent } from './search/search.component'
+import {NgxPaginationModule} from "ngx-pagination";
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import { SearchComponent } from './search/search.component'
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
+    NgxPaginationModule,
     ToastrModule.forRoot({
       timeOut: 2000,
       closeButton: true,

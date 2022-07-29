@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Student} from "../student";
 import {StudentService} from "../student.service";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Class} from "../class";
 import {ToastrService} from 'ngx-toastr'
 
@@ -11,6 +11,8 @@ import {ToastrService} from 'ngx-toastr'
   styleUrls: ['./student-list.component.css']
 })
 export class StudentListComponent implements OnInit {
+  totalLength: any;
+  page = 1;
   students: Student[] = [];
   studentAddNew: Student
   classObj: Class[] = [];
@@ -33,12 +35,15 @@ export class StudentListComponent implements OnInit {
       class: new FormControl('')
     }
   )
-  constructor(private studentService: StudentService, private toastr: ToastrService ) { }
+
+  constructor(private studentService: StudentService, private toastr: ToastrService) {
+  }
 
   ngOnInit(): void {
     this.getAll();
     this.getClass();
   }
+
   getAll() {
     this.studentService.getAllStudent().subscribe(value => {
       this.students = value;
@@ -49,10 +54,15 @@ export class StudentListComponent implements OnInit {
 
   addNew() {
     this.studentAddNew = this.studentForm.value;
-    this.studentService.save(this.studentAddNew).subscribe(res => {},
-      error => {},
-      () => {this.getAll()}
-      );
+    this.studentService.save(this.studentAddNew).subscribe(res => {
+      },
+      error => {
+      },
+      () => {
+        this.getAll();
+        this.studentForm.reset();
+      }
+    );
     this.toastr.success('Add Student successfully!', 'Hi!');
   }
 
@@ -80,5 +90,8 @@ export class StudentListComponent implements OnInit {
     if (value.length == 0) {
       this.toastr.error('Not for Found ', 'Search!');
     }
+  }
+  checkNumber(abstractControl: AbstractControl): any {
+    return abstractControl.value.password === abstractControl.value.confirmPassword ? null : {errorcheckpassword: true};
   }
 }
