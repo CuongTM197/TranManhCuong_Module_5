@@ -38,12 +38,9 @@
           <td>{{ticket.startTime}}</td>
           <td>{{ticket.houseCar.name}}</td>
           <td>{{ticket.count}}</td>
-
-          <td class="d-flex justify-content-center">
-            <button>
-              <a type="button" title="Delete" data-toggle="modal" data-target="#exampleModalLong"
-                 class="delete btn btn-primary" (click)="getTicket(ticket)">Đặt vé</a>
-            </button>
+          <td style="text-align: center">
+            <a type="button" title="Delete" data-toggle="modal" data-target="#exampleModalLong"
+               class="delete btn btn-light bi bi-bag-plus-fill " (click)="getTicket(ticket)"></a>
           </td>
         </tr>
         </tbody>

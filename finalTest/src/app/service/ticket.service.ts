@@ -25,9 +25,11 @@ export class TicketService {
   getHouseCar(): Observable<HouseCar[]> {
     return this.httpClient.get<HouseCar[]>(this.baseUrl + 'get-list-houseCar');
   }
+
   search(keyWork: string): Observable<Ticket[]> {
-    return  this.httpClient.get<Ticket[]>(this.baseUrl + 'ticketList?start_like=' + keyWork);
+    return this.httpClient.get<Ticket[]>(this.baseUrl + 'search-ticket?keyWord=' + keyWork);
   }
+
   orderTicket(ticket: Ticket): Observable<Ticket> {
 
 

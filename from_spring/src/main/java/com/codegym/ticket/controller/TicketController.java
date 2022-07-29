@@ -21,13 +21,13 @@ public class TicketController {
     private IHouseCarService iHouseCarService;
 
     @GetMapping("/get-list-ticket")
-    public ResponseEntity<?> getListTicket(){
+    public ResponseEntity<?> getListTicket() {
         List<Ticket> ticketList = iTicketService.findAll();
         return new ResponseEntity<>(ticketList, HttpStatus.OK);
     }
 
     @GetMapping("/get-list-houseCar")
-    public ResponseEntity<?> getListHouseCar(){
+    public ResponseEntity<?> getListHouseCar() {
         List<HouseCar> houseCarList = iHouseCarService.findAll();
         return new ResponseEntity<>(houseCarList, HttpStatus.OK);
     }
@@ -45,13 +45,14 @@ public class TicketController {
     }
 
     @PutMapping("order-ticket")
-    public ResponseEntity<?> orderTicket(@RequestBody Ticket ticket){
+    public ResponseEntity<?> orderTicket(@RequestBody Ticket ticket) {
         iTicketService.save(ticket);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
     @GetMapping("/search-ticket")
-    public ResponseEntity<Ticket> search(@RequestBody String start) {
-        Ticket tickets = iTicketService.searchByStart();
-        return new ResponseEntity<>(ticket, HttpStatus.OK);
+    public ResponseEntity<?> search(@RequestParam String keyWord) {
+        List<Ticket> tickets = iTicketService.searchByStart(keyWord);
+        return new ResponseEntity<>(tickets, HttpStatus.OK);
     }
 }

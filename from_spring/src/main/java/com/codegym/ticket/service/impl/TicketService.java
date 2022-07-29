@@ -29,8 +29,8 @@ public class TicketService implements ITicketService {
     }
 
     @Override
-    public List<Ticket> searchByStart(String name) {
-        return iTicketRepository.searchByStart(name);
+    public List<Ticket> searchByStart(String keyWord) {
+        return iTicketRepository.searchByStart("%"+keyWord+"%");
     }
 
     @Override

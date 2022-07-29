@@ -13,7 +13,7 @@ public interface ITicketService {
 
     Ticket findById(int id);
 
-    List<Ticket> searchByStart(String name);
+    List<Ticket> searchByStart(String keyWord);
 
     void update(Ticket ticket);
 

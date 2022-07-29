@@ -10,7 +10,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface ITicketRepository extends JpaRepository<Ticket, Integer> {
-    @Query(value = "select * from ticket where starting_point Like :start", nativeQuery = true)
-    List<Ticket> searchByStart(@Param("start") String start);
+    @Query(value = "select * from ticket where starting_point Like :keyWord", nativeQuery = true)
+    List<Ticket> searchByStart(@Param("keyWord") String keyWord);
 
 }

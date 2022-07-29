@@ -89,10 +89,11 @@ export class TicketListComponent implements OnInit {
   }
 
   getListFromSearch(value: any) {
-    this.tickets = value;
     // tslint:disable-next-line:triple-equals
     if (value.length == 0) {
       // this.toastr.error('Not for Found ', 'Search!');
+    } else {
+      this.tickets = value;
     }
   }
 
